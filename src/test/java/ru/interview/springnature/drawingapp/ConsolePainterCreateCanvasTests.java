@@ -19,7 +19,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by Eraskin Alexei on 05.09.2016.
  */
-public class ConsoleCanvasPainterTests {
+public class ConsolePainterCreateCanvasTests {
 
     private ByteArrayOutputStream out = new ByteArrayOutputStream();
     private CanvasPainter painter;
@@ -32,7 +32,7 @@ public class ConsoleCanvasPainterTests {
 
     @After
     public void cleanUpStreams() {
-        System.setOut(null);
+        System.setOut(System.out);
     }
 
     @Test

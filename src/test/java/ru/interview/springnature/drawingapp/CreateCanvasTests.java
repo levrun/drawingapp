@@ -1,5 +1,6 @@
 package ru.interview.springnature.drawingapp;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -32,15 +33,9 @@ public class CreateCanvasTests {
         painter =  new ConsoleCanvasPainter();
     }
 
-    @Test
-    public void testCreateCanvas() throws IllegalParametersException, UnknownCommandException {
-        CreateCanvas command = new CreateCanvas(new Point(1, 10));
-        command.execute(painter);
-
-        Point[][] outputCanvasArray = painter.getCanvas().getArray();
-
-        assertThat(outputCanvasArray.length, is(1));
-        assertThat(outputCanvasArray[0].length, is(10));
+    @After
+    public void cleanUp() {
+        painter = null;
     }
 
     @Test
@@ -56,5 +51,17 @@ public class CreateCanvasTests {
         thrown.expect(NoCanvasCreated.class);
         command.execute(painter);
     }
+
+    @Test
+    public void testCreateCanvas() throws IllegalParametersException, UnknownCommandException {
+        CreateCanvas command = new CreateCanvas(new Point(1, 10));
+        command.execute(painter);
+
+        Point[][] outputCanvasArray = painter.getCanvas().getArray();
+
+        assertThat(outputCanvasArray.length, is(1));
+        assertThat(outputCanvasArray[0].length, is(10));
+    }
+
 
 }
