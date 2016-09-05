@@ -34,14 +34,23 @@ public class DrawLine implements Command {
         }
 
         int canvasWidth = canvas.getSize().getX();
+        if(line.getStart().getX() < 1 || line.getEnd().getX() > canvasWidth) {
+            throw new IllegalParametersException();
+        }
+
         if(line.isHorizontal() && canvasWidth < line.getLength()) {
             throw new IllegalParametersException();
         }
 
         int canvasHeight = canvas.getSize().getY();
+        if(line.getStart().getY() < 1 || line.getEnd().getY() > canvasHeight) {
+            throw new IllegalParametersException();
+        }
+
         if(line.isVertical() && canvasHeight < line.getLength()) {
             throw new IllegalParametersException();
         }
+
     }
 
     @Override
