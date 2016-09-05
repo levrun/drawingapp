@@ -3,6 +3,7 @@ package ru.interview.springnature.drawingapp.drawing;
 import ru.interview.springnature.drawingapp.exceptions.IllegalParametersException;
 import ru.interview.springnature.drawingapp.models.Line;
 import ru.interview.springnature.drawingapp.models.Point;
+import ru.interview.springnature.drawingapp.models.Rectangle;
 
 /**
  * Created by Eraskin Alexei on 03.09.2016.
@@ -26,6 +27,25 @@ public class ConsoleCanvasPainter extends CanvasPainter {
             }
         }
 
+    }
+
+    @Override
+    public void drawRectangle(Rectangle rectangle) throws IllegalParametersException {
+        Line upperHorizontalLine = new Line(new Point(rectangle.getStart().getX(), rectangle.getStart().getY()),
+                                            new Point(rectangle.getEnd().getX(), rectangle.getStart().getY()));
+        drawLine(upperHorizontalLine);
+
+        Line bottomHorizontalLine = new Line(new Point(rectangle.getStart().getX(), rectangle.getEnd().getY()),
+                                             new Point(rectangle.getEnd().getX(), rectangle.getEnd().getY()));
+        drawLine(bottomHorizontalLine);
+
+        Line leftVerticalLine = new Line(new Point(rectangle.getStart().getX(), rectangle.getStart().getY()),
+                                         new Point(rectangle.getStart().getX(), rectangle.getEnd().getY()));
+        drawLine(leftVerticalLine);
+
+        Line rightVerticalLine = new Line(new Point(rectangle.getEnd().getX(), rectangle.getStart().getY()),
+                                          new Point(rectangle.getEnd().getX(), rectangle.getEnd().getY()));
+        drawLine(rightVerticalLine);
     }
 
     @Override
