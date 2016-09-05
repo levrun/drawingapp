@@ -4,14 +4,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import ru.interview.springnature.drawingapp.commands.CreateCanvas;
-import ru.interview.springnature.drawingapp.commands.DrawLine;
 import ru.interview.springnature.drawingapp.commands.DrawRectangle;
 import ru.interview.springnature.drawingapp.drawing.CanvasPainter;
 import ru.interview.springnature.drawingapp.drawing.ConsoleCanvasPainter;
 import ru.interview.springnature.drawingapp.exceptions.IllegalParametersException;
 import ru.interview.springnature.drawingapp.exceptions.NoCanvasCreated;
 import ru.interview.springnature.drawingapp.exceptions.UnknownCommandException;
-import ru.interview.springnature.drawingapp.models.Line;
 import ru.interview.springnature.drawingapp.models.Point;
 import ru.interview.springnature.drawingapp.models.Rectangle;
 
