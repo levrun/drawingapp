@@ -5,9 +5,9 @@ How to run
 ----------
 
 *   Java 8 has to be installed on your machine.
-*   Unzip ```drawingapp.zip```.
+*   Unrar ```drawingapp.rar```.
 *   Open terminal and go to ```drawingapp\target``` folder.
-*   Enter: ```java -jar drawingapp.jar```.
+*   Enter: ```java -jar drawingapp-0.0-RC1.jar```.
 
 program work as follows:
 
