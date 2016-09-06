@@ -2,10 +2,7 @@ package ru.interview.springnature.drawingapp;
 
 import org.junit.Before;
 import org.junit.Test;
-import ru.interview.springnature.drawingapp.commands.CreateCanvas;
-import ru.interview.springnature.drawingapp.commands.DrawLine;
-import ru.interview.springnature.drawingapp.commands.Exit;
-import ru.interview.springnature.drawingapp.commands.UnknownCommand;
+import ru.interview.springnature.drawingapp.commands.*;
 import ru.interview.springnature.drawingapp.io.StringCommandParser;
 import ru.interview.springnature.drawingapp.models.Line;
 import ru.interview.springnature.drawingapp.models.Point;
@@ -55,6 +52,14 @@ public class StringCommandParserTests {
         DrawLine drawLineCommand = new DrawLine(new Line(new Point(1, 1), new Point(10, 2)));
 
         assertThat(parser.parse(stringCommand).getName(), is(drawLineCommand.getName()));
+    }
+
+    @Test
+    public void testThatBTranslatedToBucketFillCommand() {
+        String stringCommand = "B 1 1 o";
+        BucketFill bucketFillCommand = new BucketFill(new Point(1, 1), 'o');
+
+        assertThat(parser.parse(stringCommand).getName(), is(bucketFillCommand.getName()));
     }
 
 }
