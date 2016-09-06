@@ -36,7 +36,7 @@ public class DrawingApp {
                 System.out.println("unknown command");
                 ConsoleUtils.printHelper();
             } catch (IllegalParametersException exception) {
-                System.out.println("wrong parameters provided");
+                System.out.println("wrong parameters provided " + exception.getMessage());
                 ConsoleUtils.printHelper();
             } catch (NoCanvasCreated exception) {
                 System.out.println("can't draw without canvas created");

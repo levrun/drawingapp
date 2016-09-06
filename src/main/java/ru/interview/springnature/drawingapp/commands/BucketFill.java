@@ -37,6 +37,10 @@ public class BucketFill implements Command {
             throw new NoCanvasCreated();
         }
 
+        if(canvas.getArray()[point.getConvertedX()][point.getConvertedY()].getValue() != BLANK_POINT) {
+            throw new IllegalParametersException("Can't fill already painted area");
+        }
+
         if(point.getX() < 1 || point.getY() < 1) {
             throw new IllegalParametersException();
         }
