@@ -15,6 +15,7 @@ public class StringCommandParser {
     private static final String CREATE_CANVAS_PATTERN = "(?i)C\\s+(\\d+)\\s+(\\d+)\\s?";
     private static final String DRAW_LINE_PATTERN = "(?i)L\\s+(\\d+)\\s+(\\d+)\\s+(\\d+)\\s+(\\d+)\\s?";
     private static final String DRAW_RECTANGLE_PATTERN = "(?i)R\\s+(\\d+)\\s+(\\d+)\\s+(\\d+)\\s+(\\d+)\\s?";
+    private static final String FILL_BUCKET_PATTERN = "(?i)B\\s+(\\d+)\\s+(\\d+)\\s+(\\w)\\s?";
     private static final String EXIT_PATTERN = "(?i)Q\\s?";
 
     private static final String SPACE_SYMBOL = " ";
@@ -24,6 +25,13 @@ public class StringCommandParser {
 
         if(Pattern.matches(EXIT_PATTERN, command)) {
             return new Exit();
+        }
+
+        if(Pattern.matches(FILL_BUCKET_PATTERN, command)) {
+            String[] arr = SPACE_PATTERN.split(command);
+            Point point = new Point(Integer.valueOf(arr[1].trim()), Integer.valueOf(arr[2].trim()));
+            char colorSymbol = arr[3].trim().charAt(0);
+            return new BucketFill(point, colorSymbol);
         }
 
         if(Pattern.matches(DRAW_LINE_PATTERN, command)) {

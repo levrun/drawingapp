@@ -15,6 +15,7 @@ public interface Command {
     String CREATE_CANVAS = "CanvasCommand";
     String DRAW_LINE = "DrawLineCommand";
     String DRAW_RECTANGLE = "DrawRectangleCommand";
+    String BUCKET_FILL = "BucketFillCommand";
 
     void execute(CanvasPainter canvasPainter) throws UnknownCommandException, IllegalParametersException, NoCanvasCreated;
     void validateParameters() throws IllegalParametersException, NoCanvasCreated;
