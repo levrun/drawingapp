@@ -16,7 +16,7 @@ public abstract class CanvasPainter {
     protected Canvas canvas;
 
     public static final char BLANK_POINT = ' ';
-    public static final char X_POINT = 'x';
+    public static final char FIGURES_POINT = 'x';
 
     public abstract void showCanvas() throws IllegalParametersException;
 
@@ -71,12 +71,12 @@ public abstract class CanvasPainter {
         if(line.isHorizontal()) {
             for(int i = line.getStart().getX() - 1; i < line.getStart().getX() - 1 + line.getLength(); i++) {
                 Point point = array[i][line.getStart().getY() - 1];
-                point.setValue(X_POINT);
+                point.setValue(FIGURES_POINT);
             }
         } else {
             for(int i = line.getStart().getY() - 1; i < line.getStart().getY() - 1 + line.getLength(); i++) {
                 Point point = array[line.getStart().getX() - 1][i];
-                point.setValue(X_POINT);
+                point.setValue(FIGURES_POINT);
             }
         }
 

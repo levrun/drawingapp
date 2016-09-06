@@ -1,5 +1,6 @@
-package ru.interview.springnature.drawingapp.drawing;
+package ru.interview.springnature.drawingapp.drawing.console;
 
+import ru.interview.springnature.drawingapp.drawing.CanvasPainter;
 import ru.interview.springnature.drawingapp.models.Point;
 
 /**
@@ -25,8 +26,8 @@ public class ConsoleCanvasPainter extends CanvasPainter {
                 Point point = array[x][y];
                 if(point.getValue() == BLANK_POINT) {
                     System.out.print(BLANK_POINT);
-                } else if(point.getValue() == X_POINT) {
-                    System.out.print(X_POINT);
+                } else if(point.getValue() == FIGURES_POINT) {
+                    System.out.print(FIGURES_POINT);
                 } else {
                     System.out.print(point.getValue());
                 }

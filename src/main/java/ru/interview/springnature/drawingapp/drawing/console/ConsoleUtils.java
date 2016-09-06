@@ -1,4 +1,6 @@
-package ru.interview.springnature.drawingapp.drawing;
+package ru.interview.springnature.drawingapp.drawing.console;
+
+import static ru.interview.springnature.drawingapp.drawing.Messages.*;
 
 /**
  * Created by Eraskin Alexei on 04.09.2016.
@@ -23,6 +25,26 @@ public class ConsoleUtils {
         System.out.println("> Type B x y c to use bucket fill");
         System.out.println("> Type Q to Exit");
         System.out.println("");
+    }
+
+    public static void enterCommandMessage() {
+        System.out.println(ENTER_COMMAND_MESSAGE);
+    }
+
+    public static void unknownCommandMessage() {
+        System.out.println(UNKNOWN_COMMAND);
+    }
+
+    public static void wrongParametersProvidedMessage(String message) {
+        System.out.println(WRONG_PARAMETERS_PROVIDED + message);
+    }
+
+    public static void cantDrawWithoutCanvasMessage() {
+        System.out.println(CANT_DRAW_WITHOUT_CANVAS);
+    }
+
+    public static void exitMessage() {
+        System.out.println(GOOD_BYE);
     }
 
 }
