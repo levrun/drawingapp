@@ -48,6 +48,12 @@ Notes and considerations
 1. Need to move dependencies on system.out to module so we can easily move app 
    to GUI without rewriting everything from scratch
 2. Add storage for commands so we could support UNDO and logging and more
+3. Rethink about corner cases in Bucket refill
+4. Fix some bugs and error-prone user input
+5. Add messages to configuration properties
+6. Get rid of spagetty in StringCommandParser with ChainOfResponsibility
+7. Move code-base to server and make web-app from it :)
+...
 
 # The Challenge
 You're given the task of writing a simple console version of a drawing program. At this time,
