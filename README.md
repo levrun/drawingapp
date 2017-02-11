@@ -81,46 +81,51 @@ Q Should quit the program.
 
 Below is a sample run of the program. User input is prefixed with ’enter command:’.
 enter command: C 20 4
-
+```text
 ----------------------
 |                    |
 |                    |
 |                    |
 |                    |
 ----------------------
+```
 
 enter command: L 1 2 6 2
 
+```text
 ----------------------
 |                    |
 |xxxxxx              |
 |                    |
 |                    |
 ----------------------
+```
 
 enter command: L 6 3 6 4
-
+```text
 ----------------------
 |                    |
 |xxxxxx              |
 | x                  |
 | x                  |
 ----------------------
+```
 
 enter command: R 16 1 20 3
-
+```text
 ----------------------
 |               xxxxx|
 |xxxxxx         x   x|
 |     x         xxxxx|
 |     x              |
 ----------------------
-
+```
 enter command: B 10 3 o
-
+```text
 ----------------------
 |oooooooooooooooxxxxx|
 |xxxxxxooooooooox   x|
 |     xoooooooooxxxxx|
 |     xoooooooooooooo|
 ----------------------
+```
